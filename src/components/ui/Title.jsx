@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 const Title = (props) => {
   const { title, subtitle } = props
 
-  const formatSubtitle = (text) => {
+  const formatLastWord = (text) => {
     const words = text.split(' ')
     const lastWord = words.pop()
     return (
@@ -15,7 +15,7 @@ const Title = (props) => {
 
   return (
     <div className='py-20'>
-      <h2 className="text-4xl font-bold text-center">{formatSubtitle(title)}</h2>
+      <h2 className="text-4xl font-bold text-center">{formatLastWord(title)}</h2>
       <p className="text-center">{subtitle}</p>
     </div>
   )
