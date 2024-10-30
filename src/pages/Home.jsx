@@ -1,5 +1,6 @@
 import Colleges from "../components/colleges/Colleges"
 import Discover from "../components/Discover"
+import Gallery from "../components/Gallery"
 import Hero from "../components/Hero"
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
       <Hero />
       <Discover />
       <Colleges />
+      <Gallery />
     </>
   )
 }

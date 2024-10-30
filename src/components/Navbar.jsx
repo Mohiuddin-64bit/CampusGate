@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom"
 
-
 const Navbar = () => {
   return (
     <div className="navbar bg-base-100 sticky top-0 z-50 ">
@@ -23,18 +22,19 @@ const Navbar = () => {
           <ul
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-            <li><Link>Home</Link></li>
-            <li><Link>Colleges</Link></li>
-            <li><Link>Admission</Link></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/college">Colleges</Link></li>
+            <li><Link to="/admission">Admission</Link></li>
           </ul>
         </div>
-        <Link href="/" className="btn btn-ghost text-xl">College<span className="text-primary">Gate</span></Link>
+        <Link to="/" className="btn btn-ghost text-xl">College<span className="text-primary">Gate</span></Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
-          <li><Link href="/">Home</Link></li>
-          <li><Link href="college">Colleges</Link></li>
-          <li><Link>Admission</Link></li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/college">Colleges</Link></li>
+          <li><Link to="/admission">Admission</Link></li>
+          <li><Link to="/myCollege">My College</Link></li>
         </ul>
       </div>
       <div className="navbar-end">

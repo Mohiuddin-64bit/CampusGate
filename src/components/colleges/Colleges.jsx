@@ -17,7 +17,7 @@ const Colleges = () => {
     <div className="container mx-auto">
       <Title title="Popular Colleges" subtitle="Discover the best colleges in the world" />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center">
-        {allColleges.slice(0, 3).map((college, index) => (
+        {allColleges?.slice(0, 3).map((college, index) => (
           <CollegesCard key={index} college={college} />
         ))}
       </div>
