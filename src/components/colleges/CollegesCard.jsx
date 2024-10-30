@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const CollegesCard = ({ college }) => {
 
@@ -20,7 +21,8 @@ const CollegesCard = ({ college }) => {
         {college.researchHistory && <p><strong>Research History:</strong> {college.researchHistory}</p>}
         {college.sports && <p><strong>Sports:</strong> {college.sports}</p>}
         <div className="card-actions justify-end">
-          <button className="btn btn-sm btn-outline rounded-none btn-primary">Details</button>
+          <Link to={`/colleges/${college._id}`} className="btn btn-sm btn-outline rounded-none btn-primary">Details</Link>
+          {/* <button className="btn btn-sm btn-outline rounded-none btn-primary">Details</button> */}
         </div>
       </div>
     </div>
@@ -29,6 +31,7 @@ const CollegesCard = ({ college }) => {
 
 CollegesCard.propTypes = {
   college: PropTypes.shape({
+    _id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     admissionDates: PropTypes.string,

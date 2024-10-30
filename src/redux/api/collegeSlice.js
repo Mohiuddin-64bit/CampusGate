@@ -10,8 +10,16 @@ export const collegeSlice = baseApi.injectEndpoints({
         };
       },
     }),
+    getSingleCollege: builder.query({
+      query: (id) => {
+        return {
+          url: `/colleges/${id}`,
+          method: "GET",
+        }
+      }
+    })
   }),
 });
 
 
-export const {useGetCollegesQuery} = collegeSlice
+export const {useGetCollegesQuery, useGetSingleCollegeQuery} = collegeSlice
