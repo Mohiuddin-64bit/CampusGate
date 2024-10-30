@@ -7,6 +7,14 @@ export default {
   },
   plugins: [require("daisyui")],
   daisyui: {
-    themes: ["night"],
+    themes: [
+      {
+        mytheme: {
+          primary: "#E86132", // Replace with your desired primary color
+          // You can customize other colors here as well
+        },
+      },
+      "night",
+    ],
   },
 };
