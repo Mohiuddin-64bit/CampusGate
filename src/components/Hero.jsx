@@ -15,7 +15,6 @@ const Hero = () => {
             There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form
           </p>
           <div className="flex justify-center gap-5">
-
             <button className="btn btn-outline rounded-none btn-primary">Admission</button>
             <button className="btn rounded-none btn-primary">View Colleges</button>
           </div>
