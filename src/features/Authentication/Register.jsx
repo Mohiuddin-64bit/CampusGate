@@ -2,7 +2,7 @@ import { Link, Navigate, useNavigate } from "react-router-dom"
 import { useAuth } from "../../contexts/authContext"
 import { useState } from "react"
 import { doSignUpWithEmailAndPassword, signInWithGithub, signInWithGoogle } from "../../firebase/auth"
-import { FaGithub, FaGoogle } from "react-icons/fa"
+import { FaArrowAltCircleLeft, FaGithub, FaGoogle } from "react-icons/fa"
 
 
 const Register = () => {
@@ -74,7 +74,10 @@ const Register = () => {
       {userLoggedIn && <Navigate to="/" replace={true} />}
       <div className="hero-content">
         <div className="card bg-base-100 w-full md:w-[500px] shrink-0 shadow-2xl">
-          <h3 className="text-center text-3xl font-bold pt-8">Register</h3>
+          <div className="p-5">
+            <Link className="text-2xl hover:text-primary transition-all" to="/"><FaArrowAltCircleLeft /></Link>
+          </div>
+          <h3 className="text-center text-3xl font-bold">Register</h3>
           <form onSubmit={handleSubmit} className="card-body pb-0">
             <div className="form-control">
               <label className="label">

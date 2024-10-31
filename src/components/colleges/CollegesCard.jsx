@@ -1,7 +1,21 @@
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../../contexts/authContext';
 
 const CollegesCard = ({ college }) => {
+  const { userLoggedIn } = useAuth()
+  const navigate = useNavigate();
+
+
+  const handleDetailsClick = () => {
+    if (userLoggedIn) {
+      navigate(`/colleges/${college._id}`);
+    } else {
+      navigate("/login");
+    }
+  };
+
+
 
   return (
     <div className="card rounded-none border border-slate-700 bg-slate-800  max-w-[400px] shadow-xl m-4">
@@ -21,8 +35,9 @@ const CollegesCard = ({ college }) => {
         {college.researchHistory && <p><strong>Research History:</strong> {college.researchHistory}</p>}
         {college.sports && <p><strong>Sports:</strong> {college.sports}</p>}
         <div className="card-actions justify-end">
-          <Link to={`/colleges/${college._id}`} className="btn btn-sm btn-outline rounded-none btn-primary">Details</Link>
-          {/* <button className="btn btn-sm btn-outline rounded-none btn-primary">Details</button> */}
+          <button onClick={handleDetailsClick} className="btn btn-sm btn-outline rounded-none btn-primary">
+            Details
+          </button>
         </div>
       </div>
     </div>

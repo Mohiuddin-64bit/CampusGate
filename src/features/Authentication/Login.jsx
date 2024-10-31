@@ -2,10 +2,7 @@ import { Link, Navigate, useNavigate } from "react-router-dom"
 import { useAuth } from "../../contexts/authContext"
 import { useState } from "react"
 import { doSignInWithEmailAndPassword, signInWithGithub, signInWithGoogle } from "../../firebase/auth"
-import { FaGithub, FaGoogle } from "react-icons/fa";
-
-
-
+import { FaGithub, FaGoogle, FaArrowAltCircleLeft } from "react-icons/fa";
 
 const Login = () => {
   const { userLoggedIn } = useAuth()
@@ -74,7 +71,8 @@ const Login = () => {
       {userLoggedIn && <Navigate to="/" replace={true} />}
       <div className="hero-content">
         <div className="card bg-base-100 w-full md:w-[500px] shrink-0 shadow-2xl">
-          <h3 className="text-center text-3xl font-bold pt-8">Login</h3>
+          <Link className="p-5 text-2xl hover:text-primary transition-all" to="/"><FaArrowAltCircleLeft /></Link>
+          <h3 className="text-center text-3xl font-bold">Login</h3>
           <form onSubmit={handleSubmit} className="card-body pb-0">
             <div className="form-control">
               <label htmlFor="email" className="label">
