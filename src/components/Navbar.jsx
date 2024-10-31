@@ -1,6 +1,12 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import { useAuth } from "../contexts/authContext"
+import { doSignOut } from "../firebase/auth"
 
 const Navbar = () => {
+  const { userLoggedIn } = useAuth()
+  const { currentUser } = useAuth()
+  console.log(currentUser)
+  const navigate = useNavigate()
   return (
     <div className="navbar bg-base-100 sticky top-0 z-50 ">
       <div className="navbar-start">
@@ -37,8 +43,16 @@ const Navbar = () => {
           <li><Link to="/myCollege">My College</Link></li>
         </ul>
       </div>
-      <div className="navbar-end">
-        <a className="btn">Button</a>
+      <div className="navbar-end pr-5 md:pr-8">
+        {
+          userLoggedIn ? <><div className="flex flex-col justify-start ">
+            <Link onClick={() => { doSignOut().then(() => { navigate('/login') }) }} className="btn btn-outline btn-primary rounded-none btn-sm">Logout</Link>
+          </div></> : <><div className="flex flex-col justify-start ">
+            <Link to="/login" className="hover:text-blue-600 transition-all cursor-pointer text-sm">Login</Link>
+            <Link to="/register" className="hover:text-blue-600 transition-all cursor-pointer text-sm">Register</Link>
+          </div></>
+        }
+
       </div>
     </div>
   )
