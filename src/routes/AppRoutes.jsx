@@ -4,9 +4,9 @@ import Home from "../pages/Home";
 import NotFound from "../pages/NotFound";
 import CollegeDetails from "../pages/colleges/CollegeDetails";
 import Admission from "../pages/admission/Admission";
-import CollegePage from "../pages/CollegePage";
 import Login from "../features/Authentication/Login";
 import Register from "../features/Authentication/Register";
+import CollegePage from "../pages/colleges/CollegePage";
 
 const router = createBrowserRouter([
   {

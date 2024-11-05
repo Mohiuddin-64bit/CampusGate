@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useGetSingleCollegeQuery } from '../../redux/api/collegeSlice';
+import Loading from '../../components/Loading';
 
 
 const CollegeDetails = () => {
@@ -8,7 +9,11 @@ const CollegeDetails = () => {
 
   console.log(college);
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return (
+    <div className=''>
+      <Loading />
+    </div>
+  );
   if (error) return <div>Error loading college details</div>;
 
   const renderStars = (rating) => {
